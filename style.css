@@ -3,6 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: "Roboto", sans-serif;
+}
 
 .home {
   min-height: 100vh;
@@ -18,7 +21,7 @@
   align-items: center;
   justify-content: center;
   width: 340px;
-  height: 230px;
+  height: 210px;
   background: rgb(38, 38, 38);
   position: relative;
   transition: 1s;
@@ -47,6 +50,7 @@
   );
   transition: all 0.5s;
   animation: animate linear infinite 2s;
+  animation-play-state: paused;
 }
 
 @keyframes animate {
@@ -65,16 +69,18 @@
   top: 0;
   left: 0;
   background: rgb(38, 38, 38);
-
   inset: 3px;
   border-radius: 5px;
 }
+.card:hover .lines::before {
+  animation-play-state: running;
+}
 
 .card .imgBox {
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   position: absolute;
-  top: -60px;
+  top: -80px;
   left: 50%;
   transform: translateX(-50%);
   background-color: red;
@@ -83,6 +89,14 @@
   transition: 1s;
   background: black;
   border-radius: 10px;
+  object-fit: contain;
+}
+.imgBox img {
+  width: 90%;
+  height: 90%;
+  z-index: 10;
+  position: relative;
+  padding: 10px;
 }
 .imgBox::before {
   border-radius: 10px;
@@ -101,6 +115,7 @@
   transition: all 0.5s;
   animation: animate linear infinite 2s;
 }
+
 .imgBox::after {
   content: "";
   position: absolute;
@@ -110,9 +125,45 @@
   inset: 2px;
   border-radius: 10px;
 }
+.card:hover .imgBox::before {
+  animation-play-state: paused;
+}
 .card:hover {
   height: 400px;
 }
 .card:hover .imgBox {
   top: 40px;
+}
+.contentSub {
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  position: relative;
+  z-index: 14;
+  flex-direction: column;
+  transform: translateY(60%);
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10%;
+  text-align: center;
+}
+.content {
+  overflow: hidden;
+  position: relative;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+}
+
+.contentSub button {
+  background-color: rgb(107, 198, 210);
+  width: 8rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  border: none;
+  color: black;
+  font-weight: bold;
 }
