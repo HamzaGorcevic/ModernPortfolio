@@ -196,6 +196,7 @@ body {
   position: relative;
   z-index: 5;
   border: 5px solid rgba(140, 38, 38, 0.63);
+  transition: 1s;
 }
 
 .lowerPart {
