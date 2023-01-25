@@ -1,34 +1,44 @@
-// let images = [
-//   "album/apple.jpg",
-//   "album/berry.jpg",
-//   "album/potato.jpg",
-//   "album/images.jpg",
-//   "album/carrot.jpg",
-// ];
+let images = [
+  "album/apple.jpg",
+  "album/berry.jpg",
+  "album/potato.jpg",
+  "album/images.jpg",
+  "album/carrot.jpg",
+];
 
 let right = document.querySelector(".rigthIcon");
 let left = document.querySelector(".leftIcon");
-let images = document.querySelectorAll(".singleImg");
 let containerImages = document.querySelector(".images");
 console.log(images);
 
-let lowerSliderVar = document.querySelector(".images");
+function creatingTable() {
+  containerImages.innerHTML = "";
+  images.forEach((img) => {
+    let slika = document.createElement("img");
+    slika.src = img;
+    containerImages.append(slika);
+  });
+}
+creatingTable();
+let imagesDom = document.querySelectorAll("div.images > img");
+console.log(imagesDom, "E");
+
+console.log(containerImages, "Sda");
 
 right.addEventListener("click", () => {
-  containerImages.insertBefore(images[4], images[0]);
+  console.log(containerImages.childNodes, "childnodes");
+
   let pom = images[4];
   images[4] = images[0];
   images[0] = pom;
-  containerImages.insertBefore(images[1], images[2]);
   let pom2 = images[1];
   images[1] = images[2];
   images[2] = pom2;
-  containerImages.insertBefore(images[2], images[3]);
   let pom3 = images[2];
   images[2] = images[3];
   images[3] = pom3;
-  console.log(containerImages.childNodes);
-  console.log(images, "any change");
+  console.log(imagesDom);
+  creatingTable();
 });
 console.log(containerImages.childNodes);
 
