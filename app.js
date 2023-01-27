@@ -29,15 +29,13 @@ right.addEventListener("click", () => {
   console.log(containerImages.childNodes, "childnodes");
 
   let pom = images[4];
-  images[4] = images[0];
+
+  images[4] = images[3];
+  images[3] = images[2];
+  images[2] = images[1];
+  images[1] = images[0];
   images[0] = pom;
-  let pom2 = images[1];
-  images[1] = images[2];
-  images[2] = pom2;
-  let pom3 = images[2];
-  images[2] = images[3];
-  images[3] = pom3;
-  console.log(imagesDom);
+
   creatingTable();
 });
 console.log(containerImages.childNodes);
