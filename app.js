@@ -6,14 +6,14 @@ let images = [
   "album/carrot.jpg",
 ];
 
-let right = document.querySelector(".rigthIcon");
+let right = document.querySelector(".rightIcon");
 let left = document.querySelector(".leftIcon");
 let containerImages = document.querySelector(".images");
 
 right.addEventListener("click", () => {
   upperSlider();
   containerImages.insertBefore(
-    containerImages.children[4],
+    containerImages.children[6],
     containerImages.children[0]
   );
 
@@ -23,7 +23,7 @@ left.addEventListener("click", () => {
   upperSlider();
   containerImages.insertBefore(
     containerImages.children[0],
-    containerImages.children[5]
+    containerImages.children[7]
   );
   console.log(containerImages.children);
   upperSlider();
@@ -36,7 +36,7 @@ let upperSliderVar = document.querySelector(".mainImage");
 function upperSlider() {
   upperSliderVar.innerHTML = "";
   let bigImg = document.createElement("img");
-  bigImg.src = containerImages.children[2].src;
+  bigImg.src = containerImages.children[3].children[0].src;
   upperSliderVar.append(bigImg);
 
   upperSliderVar.append(bigImg);

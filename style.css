@@ -173,7 +173,36 @@ body {
 }
 
 /* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
+/* SLIDER /////////////////////////////////////////////////// */
 
+.icon {
+  color: orange;
+  font-size: xx-large;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+}
+.rightIcon {
+  right: 0;
+}
+.leftIcon {
+  left: 0;
+}
 .slider {
   background-color: grey;
   display: flex;
@@ -182,68 +211,128 @@ body {
   flex-direction: column;
   height: 99vh;
   width: 100%;
+  padding-bottom: 90px;
 }
 /* Lower */
 .images {
   display: flex;
-  width: 1200px;
+  width: 852px;
   position: relative;
   height: 150px;
-  background: yellow;
 }
-.images img {
+.images .singleImg {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 135px;
+  height: 135px;
   border-radius: 20%;
 
-  border: 2px solid black;
-  transition: all 0.6s ease, z-index 0s;
+  transition: all 0.4s ease, z-index 0s;
+  overflow: hidden;
+  z-index: 1000;
+}
+.singleImg img {
+  width: 100%;
+  height: 100%;
+}
+.singleImg .bgImg {
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  background-color: rgb(100, 97, 97);
+  opacity: 0.8;
+  z-index: 10;
+  transition: 1s;
 }
 
 .lowerPart {
-  display: flex;
+  position: relative;
 }
 
-.images img:nth-child(1) {
-  transform: scale(1.1);
+/* '//////////////////////////////////////////////////////////////////////////////////////// */
+
+.images .singleImg:nth-child(1) {
+  transform: scale(1);
   left: 0px;
   z-index: 1;
+  /* opacity: 0.6; */
 }
 
-.images img:nth-child(2) {
-  transform: scale(1.2);
-  left: 180px;
+.images .singleImg:nth-child(2) {
+  transform: scale(1.1);
+  left: 120px;
   z-index: 2;
+
+  /* opacity: 0.6; */
 }
 
-.images img:nth-child(3) {
-  transform: scale(1.4);
-  z-index: 4;
+.images .singleImg:nth-child(3) {
+  transform: scale(1.25);
+  z-index: 3;
+
+  /* opacity: 0.6; */
+  left: 240px;
+}
+.images .singleImg:nth-child(4) {
+  transform: scale(1.5);
+  z-index: 5;
+  opacity: 1;
+
   left: 360px;
 }
-.images img:nth-child(4) {
-  transform: scale(1.2);
+.images .singleImg:nth-child(5) {
+  transform: scale(1.25);
   z-index: 3;
-  left: 90%;
-  left: 540px;
+  /* opacity: 0.6; */
+  left: 480px;
 }
-.images img:nth-child(5) {
-  transform: scale(1.1);
-  z-index: 2;
-  left: 90%;
-  left: 720px;
+.images .singleImg:nth-child(4) .bgImg {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.13),
+    rgba(0, 0, 0, 0.515),
+    rgba(0, 0, 0, 0.614)
+  );
+  opacity: 0;
 }
 
+.images .singleImg:nth-child(6) {
+  transform: scale(1.1);
+  z-index: 2;
+  /* opacity: 0.6; */
+
+  left: 600px;
+}
+.images .singleImg:nth-child(7) {
+  transform: scale(1);
+  z-index: 1;
+  /* opacity: 0.6; */
+  left: 720px;
+}
+/* //////////////////////////////////////////// */
 /* Upper */
 .mainImage {
-  background-color: red;
-  height: 400px;
-  width: 400px;
+  height: 500px;
+  width: 600px;
+  border-radius: 10px;
+  position: relative;
+}
+.mainImage::after {
+  content: "";
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.58),
+    rgba(0, 0, 0, 0.127),
+    rgba(0, 0, 0, 0.475)
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
 }
 .mainImage img {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
 }
 
 .usless1 {
