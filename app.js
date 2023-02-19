@@ -9,38 +9,25 @@ let images = [
 let right = document.querySelector(".rigthIcon");
 let left = document.querySelector(".leftIcon");
 let containerImages = document.querySelector(".images");
-console.log(images);
-
-function creatingTable() {
-  containerImages.innerHTML = "";
-  images.forEach((img) => {
-    let slika = document.createElement("img");
-    slika.src = img;
-    containerImages.append(slika);
-  });
-}
-creatingTable();
-let imagesDom = document.querySelectorAll("div.images > img");
-console.log(imagesDom, "E");
-
-console.log(containerImages, "Sda");
 
 right.addEventListener("click", () => {
-  let pom = images[4];
+  upperSlider();
+  containerImages.insertBefore(
+    containerImages.children[4],
+    containerImages.children[0]
+  );
 
-  images[4] = images[3];
-  images[3] = images[2];
-  images[2] = images[1];
-  images[1] = images[0];
-
-  images[0] = pom;
-  imagesDom[0].style = "opacity:0";
-  console.log(images, "inside");
-
-  creatingTable();
   upperSlider();
 });
-console.log(containerImages.childNodes);
+left.addEventListener("click", () => {
+  upperSlider();
+  containerImages.insertBefore(
+    containerImages.children[0],
+    containerImages.children[5]
+  );
+  console.log(containerImages.children);
+  upperSlider();
+});
 
 // Lower part
 
@@ -49,11 +36,8 @@ let upperSliderVar = document.querySelector(".mainImage");
 function upperSlider() {
   upperSliderVar.innerHTML = "";
   let bigImg = document.createElement("img");
-  bigImg.src = images[2];
+  bigImg.src = containerImages.children[2].src;
   upperSliderVar.append(bigImg);
-  console.log(images[2], "inside upper");
-  console.log(bigImg);
-  console.log(upperSliderVar);
 
   upperSliderVar.append(bigImg);
 }
